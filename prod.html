@@ -74,13 +74,15 @@
         <div class="qr-code">
             <img src="https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09${jour}%09${mois}%09${annee}%0915%0915" id="qr-1515" alt="QR Code 15H15">
         </div>
-        <p>Scannez ce code pour accéder au lien</p>
-        
+        <p>Scannez ce code pour accéder au  lien</p>
+
         <h1>Camion 16H00</h1>
         <div class="qr-code">
-            <img src="https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09${jour}%09${mois}%09${annee}%0916%0900" id="qr-1600" alt="QR Code 16H00">
+            <img src="${adressefull15}" id="qr-1600" alt="QR Code 16H00">
         </div>
-        <p>Scannez ce code pour accéder au lien</p>
+        <p>Scannez ce code pour accéder au  lien</p>
+        
+    
         
         <!-- Affichage de la date -->
         <div class="date-info">
@@ -100,9 +102,9 @@
         const jour = today.getDate();
         const mois = today.getMonth() + 1;
         const annee = today.getFullYear();
-        const adressefull15 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + ${jour} + "%09" +${mois} + "%09" + ${annee} + "%0916%0900"
+        const adressefull15 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + ${jour} + "%09" +${mois} + "%09" + ${annee} + "%0915%0915"
+        const adressefull16 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + ${jour} + "%09" +${mois} + "%09" + ${annee} + "%0916%0900"
  
-
         // Ajouter un zéro devant si jour ou mois < 10
         const jourFormate = jour < 10 ? '0' + jour : jour;
         const moisFormate = mois < 10 ? '0' + mois : mois;
