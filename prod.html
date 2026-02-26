@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code - Environnement PROD</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffebee;
+            font-family: Arial, sans-serif;
+        }
+        .qr-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+        .environment-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .qr-container h1 {
+            margin-top: 0;
+        }
+        .qr-code {
+            margin: 20px 0;
+        }
+        .qr-code img {
+            max-width: 400px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .date-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+        .back-link {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .back-link a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-container">
+        <span class="environment-badge">🚀 Environnement Production</span>
+        
+        <h1>Camion 15H15</h1>
+        <div class="qr-code">
+            <img src="https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09${jour}%09${mois}%09${annee}%0915%0915" id="qr-1515" alt="QR Code 15H15">
+        </div>
+        <p>Scannez ce code pour accéder au lien</p>
+        
+        <h1>Camion 16H00</h1>
+        <div class="qr-code">
+            <img src="https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09${jour}%09${mois}%09${annee}%0916%0900" id="qr-1600" alt="QR Code 16H00">
+        </div>
+        <p>Scannez ce code pour accéder au lien</p>
+        
+        <!-- Affichage de la date -->
+        <div class="date-info">
+            <p>Date d'aujourd'hui : <strong id="dateDisplay"></strong></p>
+        </div>
+        
+        <div class="back-link">
+            <a href="index.html">← Retour au choix d'environnement</a>
+        </div>
+    </div>
+
+    <script>
+        // Récupérer la date du jour
+        const today = new Date();
+
+        // Séparer le jour, le mois et l'année dans des variables
+        const jour = today.getDate();
+        const mois = today.getMonth() + 1;
+        const annee = today.getFullYear();
+
+        // Ajouter un zéro devant si jour ou mois < 10
+        const jourFormate = jour < 10 ? '0' + jour : jour;
+        const moisFormate = mois < 10 ? '0' + mois : mois;
+
+        // Afficher les variables dans la console
+        console.log('Jour:', jour);
+        console.log('Mois:', mois);
+        console.log('Année:', annee);
+        console.log('Format complet:', jourFormate + '/' + moisFormate + '/' + annee);
+
+        // Afficher la date formatée sur la page
+        document.getElementById('dateDisplay').textContent = 
+            jourFormate + '/' + moisFormate + '/' + annee;
+
+        // Générer les QR codes avec les variables de date
+        const textQR2030 = `nav\t${jourFormate}\t${moisFormate}\t${annee}\t20\t30`;
+        const textQR2130 = `nav\t${jourFormate}\t${moisFormate}\t${annee}\t21\t30`;
+        const textQR2230 = `nav\t${jourFormate}\t${moisFormate}\t${annee}\t22\t30`;
+
+        // Mettre à jour les sources des images
+        document.getElementById('qr-2030').src = 
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2030)}&size=400`;
+        document.getElementById('qr-2130').src = 
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2130)}&size=400`;
+        document.getElementById('qr-2230').src = 
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2230)}&size=400`;
+
+        console.log('QR 20H30:', textQR2030);
+        console.log('QR 21H30:', textQR2130);
+        console.log('QR 22H30:', textQR2230);
+    </script>
+</body>
+</html>
