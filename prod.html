@@ -70,15 +70,21 @@
     <div class="qr-container">
         <span class="environment-badge">🚀 Environnement Production</span>
         
-        <h1>Camion 15H15</h1>
+        <h1>Camion 07H30</h1>
         <div class="qr-code">
-            <img src="${adressefull16}" id="qr-1515" alt="QR Code 15H15">
+            <img src="${adressefull07}" id="qr-0730" alt="QR Code 07H30">
         </div>
-        <p>Scannez ce code pour remplir les champs du camion de 15H15</p>
+        <p>Scannez ce code pour remplir les champs du camion de 07H30</p>
+        
+        <h1>Camion 12H00</h1>
+        <div class="qr-code">
+            <img src="${adressefull12}" id="qr-1200" alt="QR Code 12H00">
+        </div>
+        <p>Scannez ce code pour remplir les champs du camion de 12H00</p>
 
         <h1>Camion 16H00</h1>
         <div class="qr-code">
-            <img src="${adressefull15}" id="qr-1600" alt="QR Code 16H00">
+            <img src="${adressefull16}" id="qr-1600" alt="QR Code 16H00">
         </div>
         <p>Scannez ce code pour remplir les champs du camion de 16H00</p>
         
@@ -102,7 +108,8 @@
         const jour = today.getDate();
         const mois = today.getMonth() + 1;
         const annee = today.getFullYear();
-        const adressefull15 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + jour + "%09" + mois + "%09" + annee + "%0915%0915"
+        const adressefull07 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + jour + "%09" + mois + "%09" + annee + "%0907%0930"
+        const adressefull12 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + jour + "%09" + mois + "%09" + annee + "%0912%0905"
         const adressefull16 = "https://quickchart.io/qr?text=https://quickchart.io/qr?text=%09%09%09%09%09%09%09%09%09%09%09nav%09" + jour + "%09" + mois + "%09" + annee + "%0916%0900"
  
         // Ajouter un zéro devant si jour ou mois < 10
@@ -120,16 +127,19 @@
             jourFormate + '/' + moisFormate + '/' + annee;
 
         // Générer les QR codes avec les variables de date
+        const textQR0730 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t07\t30`;
         const textQR1515 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t15\t15`;
         const textQR1600 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t16\t00`;
        
         // Mettre à jour les sources des images
+         document.getElementById('qr-0730').src = 
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR0730)}&size=200`;
         document.getElementById('qr-1515').src = 
             `https://quickchart.io/qr?text=${encodeURIComponent(textQR1515)}&size=200`;
         document.getElementById('qr-1600').src = 
             `https://quickchart.io/qr?text=${encodeURIComponent(textQR1600)}&size=200`;
         
-
+        console.log('QR 07H30:', textQR0730);
         console.log('QR 16H00:', textQR1600);
         console.log('QR 15H15:', textQR1515);
      
