@@ -122,17 +122,17 @@
             jourFormate + '/' + moisFormate + '/' + annee;
 
         // Générer les QR codes avec les variables de date
-        const textQR2030 = `nav\t${jourFormate}\t${moisFormate}\t${annee}\t20\t30`;
-        const textQR2130 = `nav\t${jourFormate}\t${moisFormate}\t${annee}\t21\t30`;
-        const textQR2230 = `nav\t${jourFormate}\t${moisFormate}\t${annee}\t22\t30`;
+        const textQR2030 = `https://qrcodeboulot.netlify.app/0730.html`;
+        const textQR2130 = `https://qrcodeboulot.netlify.app/1200.html`;
+        const textQR2230 = `https://qrcodeboulot.netlify.app/1600.html`;
 
         // Mettre à jour les sources des images
         document.getElementById('qr-2030').src = 
-            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2030)}&size=400`;
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2030)}&size=200`;
         document.getElementById('qr-2130').src = 
-            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2130)}&size=400`;
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2130)}&size=200`;
         document.getElementById('qr-2230').src = 
-            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2230)}&size=400`;
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR2230)}&size=200`;
 
         console.log('QR 20H30:', textQR2030);
         console.log('QR 21H30:', textQR2130);
