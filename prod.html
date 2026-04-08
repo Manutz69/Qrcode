@@ -128,20 +128,20 @@
 
         // Générer les QR codes avec les variables de date
         const textQR0730 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t07\t30`;
-        const textQR1515 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t15\t15`;
+        const textQR1200 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t15\t15`;
         const textQR1600 = `\t\t\t\t\t\t\t\t\t\t\tnav\t${jourFormate}\t${moisFormate}\t${annee}\t16\t00`;
        
         // Mettre à jour les sources des images
         document.getElementById('qr-0730').src = 
             `https://quickchart.io/qr?text=${encodeURIComponent(textQR0730)}&size=200`;
-        document.getElementById('qr-1515').src = 
-            `https://quickchart.io/qr?text=${encodeURIComponent(textQR1515)}&size=200`;
+        document.getElementById('qr-1200').src = 
+            `https://quickchart.io/qr?text=${encodeURIComponent(textQR1200)}&size=200`;
         document.getElementById('qr-1600').src = 
             `https://quickchart.io/qr?text=${encodeURIComponent(textQR1600)}&size=200`;
         
         console.log('QR 07H30:', textQR0730);
         console.log('QR 16H00:', textQR1600);
-        console.log('QR 15H15:', textQR1515);
+        console.log('QR 12H00:', textQR1200);
      
     </script>
 </body>
